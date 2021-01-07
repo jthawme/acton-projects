@@ -1,0 +1,5 @@
+.container {
+  max-width: var(--container-max-width, var(--page-max-width));
+
+  margin: var(--container-margin, 0 var(--size-unit-10));
+}
