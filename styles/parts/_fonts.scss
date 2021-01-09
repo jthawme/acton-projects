@@ -1,6 +1,6 @@
-// @font-face {
-//   font-family: "Arcade Normal";
-//   font-weight: 400;
-//   font-display: swap;
-//   src: url("~assets/fonts/ARCADE_N.woff2") format('woff2');
-// }
+@font-face {
+  font-family: "Arnhem";
+  font-weight: normal;
+  src: url("~/fonts/Arnhem-Blond.woff2") format("woff2"),
+    url("~/fonts/Arnhem-Blond.woff") format("woff");
+}

@@ -37,3 +37,36 @@
 @function vh($quantity) {
   @return calc(var(--vh, 1vh) * #{$quantity});
 }
+
+@mixin topGrid() {
+  display: grid;
+
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: var(--size-unit-10);
+}
+
+@mixin column($start, $span) {
+  grid-column: $start / span $span;
+}
+
+@mixin fullColumn() {
+  @include column(1, 6);
+}
+
+@mixin leftColumn() {
+  @include column(1, 4);
+}
+
+@mixin leftColumnLarge() {
+  @include column(1, 6);
+}
+
+@mixin rightColumn() {
+  @include column(5, 4);
+}
+
+@mixin altText() {
+  font-family: var(--font-family-alt);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

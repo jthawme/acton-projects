@@ -1,0 +1,36 @@
+.text {
+  margin: var(--text-margin, 0);
+  padding: var(--text-padding, 0);
+
+  font-size: var(--text-font-size);
+  line-height: var(--text-line-height, 1.2);
+
+  &:last-child {
+    margin: var(--text-last-margin, 0);
+  }
+
+  em {
+    color: var(--color-red);
+    font-style: normal;
+  }
+}
+
+.large {
+  --text-font-size: var(--font-size-large);
+
+  --text-margin: 0 0 var(--font-size-normal);
+}
+
+.medium {
+  --text-font-size: var(--font-size-medium);
+
+  --text-margin: 0 0 var(--font-size-normal);
+  --text-line-height: 1.4;
+}
+
+.normal {
+  --text-font-size: var(--font-size-normal);
+
+  --text-margin: 0 0 var(--font-size-normal);
+  --text-line-height: 1.4;
+}

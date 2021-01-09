@@ -1,0 +1,41 @@
+.section {
+  background-color: var(--color-dark-red);
+  color: var(--color-light-red-orange);
+
+  height: calc(100vh - var(--global-margin));
+  min-height: 500px;
+
+  padding-bottom: var(--global-margin);
+
+  .container {
+    @include topGrid;
+
+    grid-template-rows: repeat(2, 1fr);
+
+    height: 100%;
+  }
+
+  .logo {
+    color: var(--color-white);
+
+    transition: {
+      duration: 0.75s;
+      property: opacity;
+    }
+
+    &.hide {
+      opacity: 0;
+    }
+
+    &Wrapper {
+      padding-top: var(--size-unit-8);
+    }
+  }
+
+  .text {
+    @include leftColumn;
+
+    grid-row: 2;
+    align-self: flex-end;
+  }
+}

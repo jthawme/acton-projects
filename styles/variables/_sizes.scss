@@ -4,4 +4,6 @@
   @for $i from 1 through 20 {
     --size-unit-#{$i}: #{$i * 5px};
   }
+
+  --global-margin: var(--size-unit-10);
 }

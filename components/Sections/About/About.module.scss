@@ -1,0 +1,91 @@
+.intro {
+  @include topGrid;
+
+  color: var(--color-light-red-orange);
+
+  align-items: flex-end;
+  height: 100%;
+
+  &Wrapper {
+    background-color: var(--color-earth-3);
+
+    height: 60vh;
+  }
+
+  &Text {
+    @include leftColumn;
+
+    padding-bottom: var(--global-margin);
+  }
+}
+
+.image {
+  @include topGrid;
+
+  margin-bottom: var(--global-margin);
+
+  &Wrapper {
+    position: relative;
+
+    &:before {
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 50%;
+
+      content: "";
+
+      background-color: var(--color-earth-3);
+    }
+  }
+
+  &El {
+    @include leftColumnLarge;
+
+    position: relative;
+
+    z-index: 2;
+  }
+}
+
+.aboutText {
+  @include topGrid;
+
+  margin-bottom: var(--size-unit-16);
+
+  &Lead {
+    @include leftColumn;
+  }
+
+  &Supporting {
+    @include column(5, 2);
+  }
+}
+
+.team {
+  @include topGrid;
+
+  margin-bottom: var(--global-margin);
+  color: var(--color-red);
+
+  &Title {
+    @include fullColumn;
+
+    margin-bottom: var(--size-unit-16);
+  }
+
+  &Image {
+    @include leftColumn;
+  }
+
+  &Supporting {
+    @include rightColumn;
+
+    p:first-child {
+      margin-bottom: var(--global-margin);
+    }
+  }
+}

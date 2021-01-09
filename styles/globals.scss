@@ -22,7 +22,7 @@ html {
 
   background-color: var(--color-bg);
 
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 input,
@@ -37,6 +37,10 @@ body {
   min-height: 100%;
 }
 
+img {
+  max-width: 100%;
+}
+
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -45,4 +49,12 @@ body {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.alt-text {
+  @include altText;
+
+  &.small {
+    font-size: var(--font-size-small);
+  }
 }

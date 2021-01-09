@@ -9,46 +9,63 @@ import styles from "./Logo.module.scss";
 
 interface LogoInterface extends React.HTMLAttributes<HTMLDivElement> {
   side?: boolean;
+  height?: boolean;
+  withText?: boolean;
 }
 
-const Logo: React.FC<LogoInterface> = ({ className, side }) => {
+const Logo: React.FC<LogoInterface> = ({
+  className,
+  height,
+  withText = true,
+  side,
+}) => {
   return (
-    <div className={classNames(styles.logo, className)}>
+    <div
+      className={classNames(
+        styles.logo,
+        { [styles.height]: height },
+        className
+      )}
+    >
       <LogoMarkSvg className={styles["logo-mark"]} />
 
-      <AnimatePresence>
-        {side && (
-          <motion.div
-            initial={{ opacity: 0, y: "-30%" }}
-            animate={{ opacity: 1, y: "-50%" }}
-            exit={{ opacity: 0, y: "-30%" }}
-            transition={{
-              duration: 0.75,
-              ease: "easeOut",
-            }}
-            className={classNames(styles.logoText, styles.logoTextRight)}
-          >
-            <LogoTextSvg />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {withText && (
+        <>
+          <AnimatePresence initial={false}>
+            {side && (
+              <motion.div
+                initial={{ opacity: 0, y: "-30%" }}
+                animate={{ opacity: 1, y: "-50%" }}
+                exit={{ opacity: 0, y: "-30%" }}
+                transition={{
+                  duration: 0.75,
+                  ease: "easeOut",
+                }}
+                className={classNames(styles.logoText, styles.logoTextRight)}
+              >
+                <LogoTextSvg />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-      <AnimatePresence>
-        {!side && (
-          <motion.div
-            initial={{ opacity: 0, y: "20%" }}
-            animate={{ opacity: 1, y: "0" }}
-            exit={{ opacity: 0, y: "20%" }}
-            transition={{
-              duration: 0.75,
-              ease: "easeOut",
-            }}
-            className={classNames(styles.logoText, styles.logoTextBottom)}
-          >
-            <LogoTextSvg />
-          </motion.div>
-        )}
-      </AnimatePresence>
+          <AnimatePresence initial={false}>
+            {!side && (
+              <motion.div
+                initial={{ opacity: 0, y: "20%" }}
+                animate={{ opacity: 1, y: "0" }}
+                exit={{ opacity: 0, y: "20%" }}
+                transition={{
+                  duration: 0.75,
+                  ease: "easeOut",
+                }}
+                className={classNames(styles.logoText, styles.logoTextBottom)}
+              >
+                <LogoTextSvg />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </>
+      )}
     </div>
   );
 };

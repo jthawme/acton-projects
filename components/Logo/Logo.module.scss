@@ -3,12 +3,14 @@
 
   line-height: 0;
 
-  svg {
-    width: 100%;
-  }
-
   &-mark {
     width: 60px;
+  }
+
+  &.height,
+  &.height .logo-mark {
+    width: auto;
+    height: 100%;
   }
 
   &Text {
