@@ -2,10 +2,19 @@
   background-color: var(--color-dark-red);
   color: var(--color-light-red-orange);
 
-  height: calc(100vh - var(--global-margin));
+  height: 100vh;
   min-height: 500px;
 
   padding-bottom: var(--global-margin);
+
+  transition: {
+    duration: 0.75s;
+    property: height;
+  }
+
+  &.show {
+    height: calc(100vh - var(--global-margin));
+  }
 
   .container {
     @include topGrid;
@@ -18,8 +27,10 @@
   .logo {
     color: var(--color-white);
 
+    width: 60px;
+
     transition: {
-      duration: 0.75s;
+      duration: 1s;
       property: opacity;
     }
 

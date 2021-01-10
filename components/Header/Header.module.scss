@@ -12,9 +12,15 @@
 
   color: var(--color-white);
 
+  opacity: 0;
+
   transition: {
-    property: transform;
+    property: transform, opacity;
     duration: 0.75s;
+  }
+
+  &.show {
+    opacity: 1;
   }
 
   &:before {
@@ -133,6 +139,7 @@
   grid-column: 1 / span 1;
   height: var(--font-size-medium);
   height: 100%;
+  color: var(--color-white);
 }
 
 .fixedLogo {

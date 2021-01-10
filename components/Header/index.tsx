@@ -7,18 +7,19 @@ import { Logo } from "../Logo";
 import styles from "./Header.module.scss";
 import { tickUpdate } from "../../utils/utils";
 import { useSiteContext } from "../SiteContext";
+import { InternalLink } from "../Common/InternalLink";
 
 const MENU_ITEMS = [
   {
-    to: "/#about",
+    id: "about",
     label: "About",
   },
   {
-    to: "/#service",
+    id: "service",
     label: "Service",
   },
   {
-    to: "/#contacts",
+    id: "contact",
     label: "Contacts",
   },
 ];
@@ -26,7 +27,7 @@ const MENU_ITEMS = [
 const TOP_THRESHOLD = 100;
 
 const Header = () => {
-  const { isTop, setIsTop } = useSiteContext();
+  const { isTop, setIsTop, activeSection, virtualSplash } = useSiteContext();
 
   useEffect(() => {
     const cb = tickUpdate(() => {
@@ -44,22 +45,26 @@ const Header = () => {
 
   return (
     <header
-      className={classNames(styles.header, { [styles["not-top"]]: !isTop })}
+      className={classNames(
+        styles.header,
+        { [styles["not-top"]]: !isTop },
+        { [styles.show]: !virtualSplash }
+      )}
     >
       <Container className={styles.inner}>
-        <div className={styles.logoEl}>
+        <InternalLink href="/#landing" className={styles.logoEl}>
           {/* <Logo className={styles.logo} side={!isTop} /> */}
           <Logo className={styles.fixedLogo} height side withText={false} />
-        </div>
+        </InternalLink>
         <nav className={styles["links-nav"]}>
           {MENU_ITEMS.map((item) => (
             <div
               className={classNames(styles.item, "alt-text", "small", {
-                [styles.active]: false,
+                [styles.active]: activeSection === item.id,
               })}
-              key={item.to}
+              key={item.id}
             >
-              <a href={item.to}>{item.label}</a>
+              <InternalLink href={`/#${item.id}`}>{item.label}</InternalLink>
             </div>
           ))}
         </nav>

@@ -15,7 +15,7 @@
   &Text {
     @include leftColumn;
 
-    padding-bottom: var(--global-margin);
+    --text-padding: 0 0 var(--global-margin);
   }
 }
 
@@ -61,7 +61,11 @@
   }
 
   &Supporting {
-    @include column(5, 2);
+    @include column(1, 4);
+
+    @include tablet {
+      @include column(5, 2);
+    }
   }
 }
 
@@ -74,11 +78,17 @@
   &Title {
     @include fullColumn;
 
-    margin-bottom: var(--size-unit-16);
+    margin-bottom: var(--global-double-margin);
   }
 
   &Image {
     @include leftColumn;
+
+    margin-bottom: var(--size-unit-4);
+
+    @include tablet {
+      margin-bottom: 0;
+    }
   }
 
   &Supporting {

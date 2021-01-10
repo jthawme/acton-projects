@@ -1,0 +1,47 @@
+.intro {
+  @include topGrid;
+
+  color: var(--color-white);
+
+  align-items: flex-end;
+  height: 100%;
+
+  &Wrapper {
+    background-color: var(--color-earth-2);
+  }
+
+  &Text {
+    @include leftColumn;
+
+    --text-padding: 50vh 0 var(--global-double-margin);
+  }
+}
+
+.row {
+  @include leftColumn;
+
+  margin-bottom: var(--size-unit-10);
+
+  &Title {
+    color: var(--color-dark-red-orange);
+  }
+
+  &Content {
+    color: var(--color-white);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      transition: {
+        duration: 0.5s;
+        property: opacity;
+      }
+
+      &:hover,
+      &:focus {
+        opacity: 0.35;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useCallback, useEffect, useState } from "react";
 import classNames from "classnames";
 
 import { TextEl } from "../../Common/Text";
@@ -9,22 +9,45 @@ import styles from "./Landing.module.scss";
 import { useSiteContext } from "../../SiteContext";
 
 const Landing = () => {
-  const { isTop } = useSiteContext();
+  const { isTop, observeElement, virtualSplash } = useSiteContext();
+  const unobserve = useRef(() => {});
+  const [show, setShow] = useState(false);
+
+  const onRef = useCallback((ref) => {
+    if (ref) {
+      unobserve.current = observeElement(ref);
+    }
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 500);
+    return unobserve.current;
+  }, []);
 
   return (
-    <section id="landing" className={styles.section}>
+    <section
+      ref={onRef}
+      id="landing"
+      className={classNames(styles.section, { [styles.show]: !virtualSplash })}
+    >
       <Container className={styles.container}>
         <div className={styles.logoWrapper}>
           <Logo
-            className={classNames(styles.logo, { [styles.hide]: !isTop })}
+            className={classNames(styles.logo, {
+              [styles.hide]: !isTop || virtualSplash,
+            })}
           />
         </div>
 
-        <TextEl className={styles.text}>
-          Acton Projects is a new construction company with many years of
-          experience. We bring a personal touch to residential, commercial and
-          public sector building.{" "}
-        </TextEl>
+        {show && (
+          <TextEl className={styles.text}>
+            Acton Projects is a new construction company with many years of
+            experience. We bring a personal touch to residential, commercial and
+            public sector building.{" "}
+          </TextEl>
+        )}
       </Container>
     </section>
   );

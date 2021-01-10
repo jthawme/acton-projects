@@ -1,0 +1,68 @@
+.footer {
+  position: fixed;
+
+  width: 100%;
+  bottom: 0;
+}
+
+.brand {
+  background-color: var(--color-light-skin);
+
+  --container-margin: var(--global-margin);
+  color: var(--color-dark-red-orange);
+
+  &Logo {
+    width: 60px;
+  }
+}
+
+.links {
+  @include topGrid;
+
+  --container-margin: var(--global-margin) var(--global-margin)
+    var(--size-unit-2);
+
+  color: var(--color-dark-red-orange);
+
+  &Content {
+    @include fullColumn;
+    @include altText;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      transition: {
+        duration: 0.5s;
+        property: opacity;
+      }
+
+      &:hover,
+      &:focus {
+        opacity: 0.35;
+      }
+    }
+  }
+
+  &Copyright,
+  &Jump {
+    font-size: var(--font-size-small);
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  &Copyright {
+    @include leftColumn;
+  }
+
+  &Jump {
+    @include rightColumn;
+
+    @include tablet {
+      text-align: right;
+    }
+  }
+}

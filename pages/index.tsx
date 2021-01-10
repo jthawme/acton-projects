@@ -1,7 +1,10 @@
 import Head from "next/head";
+import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { AboutSection } from "../components/Sections/About";
+import { ContactSection } from "../components/Sections/Contact";
 import { Landing } from "../components/Sections/Landing";
+import { ServiceSection } from "../components/Sections/Service";
 import { SiteContainer } from "../components/SiteContext";
 import styles from "../styles/pages/Home.module.scss";
 
@@ -25,7 +28,13 @@ export default function Home() {
           <Landing />
 
           <AboutSection />
+
+          <ServiceSection />
+
+          <ContactSection />
         </main>
+
+        <Footer />
       </div>
     </SiteContainer>
   );

@@ -5,5 +5,11 @@
     --size-unit-#{$i}: #{$i * 5px};
   }
 
-  --global-margin: var(--size-unit-10);
+  --global-margin: var(--size-unit-5);
+  --global-double-margin: var(--size-unit-9);
+
+  @include tablet {
+    --global-margin: var(--size-unit-10);
+    --global-double-margin: var(--size-unit-18);
+  }
 }

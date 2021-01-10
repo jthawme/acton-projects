@@ -1,4 +1,5 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import classNames from "classnames";
 
 import styles from "./Text.module.scss";
@@ -14,8 +15,21 @@ const TextEl: React.FC<TextProps> = ({
   size = "large",
   children,
 }) => {
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+
   return (
-    <El className={classNames(styles.text, styles[size], className)}>
+    <El
+      ref={ref}
+      className={classNames(
+        styles.text,
+        { [styles.visible]: inView },
+        styles[size],
+        className
+      )}
+    >
       {children}
     </El>
   );

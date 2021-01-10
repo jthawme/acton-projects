@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { Container } from "../../Container";
 import { TextEl } from "../../Common/Text";
 import { ImageEl } from "../../Common/Image";
 import { TitleEl } from "../../Common/Title";
 
 import styles from "./About.module.scss";
+import { useSiteContext } from "../../SiteContext";
 
 const AboutSection = () => {
+  const { observeElement } = useSiteContext();
+  const unobserve = useRef(() => {});
+
+  const onRef = useCallback((ref) => {
+    if (ref) {
+      unobserve.current = observeElement(ref);
+    }
+  }, []);
+
+  useEffect(() => {
+    return unobserve.current;
+  }, []);
+
   return (
-    <section id="about" className={styles.section}>
+    <section id="about" ref={onRef} className={styles.section}>
       <div className={styles.introWrapper}>
         <Container className={styles.intro}>
           <TextEl className={styles.introText}>
@@ -25,7 +39,7 @@ const AboutSection = () => {
             alt=""
             label="Image label"
             ratio={2592 / 3872}
-            color="var(--color-earth-1)"
+            color="var(--color-earth-4)"
           />
         </Container>
       </div>
@@ -60,7 +74,7 @@ const AboutSection = () => {
             alt=""
             label="Image label"
             ratio={0.6672597865}
-            color="var(--color-earth-1)"
+            color="var(--color-light-red-orange)"
           />
           <div className={styles.teamSupporting}>
             <TitleEl>GARRY ACTON — DIRECTOR</TitleEl>

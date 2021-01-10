@@ -41,8 +41,12 @@
 @mixin topGrid() {
   display: grid;
 
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   column-gap: var(--size-unit-10);
+
+  @include tablet {
+    grid-template-columns: repeat(8, 1fr);
+  }
 }
 
 @mixin column($start, $span) {
@@ -50,19 +54,39 @@
 }
 
 @mixin fullColumn() {
-  @include column(1, 6);
+  @include column(1, 4);
+
+  @include tablet {
+    @include column(1, 8);
+  }
 }
 
 @mixin leftColumn() {
   @include column(1, 4);
+
+  @include tablet {
+    @include column(1, 4);
+  }
 }
 
 @mixin leftColumnLarge() {
-  @include column(1, 6);
+  @include column(1, 4);
+
+  @include tablet {
+    @include column(1, 7);
+  }
+
+  @include desktop {
+    @include column(1, 6);
+  }
 }
 
 @mixin rightColumn() {
-  @include column(5, 4);
+  @include column(1, 4);
+
+  @include tablet {
+    @include column(5, 4);
+  }
 }
 
 @mixin altText() {

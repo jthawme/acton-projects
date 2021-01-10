@@ -1,0 +1,58 @@
+.intro {
+  @include topGrid;
+
+  color: var(--color-light-red-orange);
+
+  align-items: flex-end;
+  height: 100%;
+
+  &Wrapper {
+    background-color: var(--color-dark-red-orange);
+
+    height: 70vh;
+  }
+
+  &Text {
+    @include leftColumn;
+
+    --text-padding: 0 0 var(--global-double-margin);
+  }
+}
+
+.split {
+  @include topGrid;
+
+  color: var(--color-red);
+
+  &Wrapper {
+    padding: var(--global-double-margin) 0;
+  }
+
+  &One {
+    @include leftColumn;
+
+    margin-bottom: var(--global-double-margin);
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+
+    .splitContent {
+      --text-padding: var(--size-unit-4) 0;
+    }
+  }
+
+  &Two {
+    @include rightColumn;
+
+    .splitContent {
+      background-color: var(--color-light-red);
+
+      --text-padding: var(--size-unit-4);
+    }
+  }
+
+  &Title {
+    --title-margin: 0 0 var(--global-margin);
+  }
+}

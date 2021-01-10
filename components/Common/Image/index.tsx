@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import classNames from "classnames";
+import { useInView } from "react-intersection-observer";
 import styles from "./Image.module.scss";
 import { loadImage } from "../../../utils/promises";
 
@@ -21,6 +22,10 @@ const ImageEl: React.FC<ImageProps> = ({
 }) => {
   const [loaded, setLoaded] = useState(false);
   const [internalSrc, setInternalSrc] = useState("");
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
 
   useEffect(() => {
     setLoaded(false);
@@ -40,9 +45,10 @@ const ImageEl: React.FC<ImageProps> = ({
       }
       className={classNames(
         styles.image,
-        { [styles.loaded]: loaded },
+        { [styles.loaded]: loaded && inView },
         className
       )}
+      ref={ref}
     >
       {label && (
         <span className={classNames(styles.label, "alt-text", "small")}>
