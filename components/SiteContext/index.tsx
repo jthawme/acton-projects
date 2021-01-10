@@ -6,7 +6,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 interface SiteContext {
   isTop: boolean;
