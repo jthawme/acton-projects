@@ -7,9 +7,11 @@ import { Logo } from "../../Logo";
 
 import styles from "./Landing.module.scss";
 import { useSiteContext } from "../../SiteContext";
+import { useTransitionMount } from "../../../utils/hooks";
 
 const Landing = () => {
   const { isTop, observeElement, virtualSplash } = useSiteContext();
+  const transitionMount = useTransitionMount();
   const unobserve = useRef(() => {});
   const [show, setShow] = useState(false);
 
@@ -30,7 +32,11 @@ const Landing = () => {
     <section
       ref={onRef}
       id="landing"
-      className={classNames(styles.section, { [styles.show]: !virtualSplash })}
+      className={classNames(
+        styles.section,
+        { [styles.show]: !virtualSplash },
+        { [styles.transition]: transitionMount }
+      )}
     >
       <Container className={styles.container}>
         <div className={styles.logoWrapper}>

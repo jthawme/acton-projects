@@ -29,17 +29,21 @@
 
     width: 60px;
 
-    transition: {
-      duration: 1s;
-      property: opacity;
-    }
-
     &.hide {
       opacity: 0;
     }
 
     &Wrapper {
       padding-top: var(--size-unit-8);
+    }
+  }
+
+  &.transition {
+    .logo {
+      transition: {
+        duration: 1s;
+        property: opacity;
+      }
     }
   }
 
