@@ -8,6 +8,7 @@ import styles from "./Header.module.scss";
 import { tickUpdate } from "../../utils/utils";
 import { useSiteContext } from "../SiteContext";
 import { InternalLink } from "../Common/InternalLink";
+import { useTransitionMount } from "../../utils/hooks";
 
 const MENU_ITEMS = [
   {
@@ -28,6 +29,7 @@ const TOP_THRESHOLD = 100;
 
 const Header = () => {
   const { isTop, setIsTop, activeSection, virtualSplash } = useSiteContext();
+  const transitionMount = useTransitionMount();
 
   useEffect(() => {
     const cb = tickUpdate(() => {
@@ -48,6 +50,7 @@ const Header = () => {
       className={classNames(
         styles.header,
         { [styles["not-top"]]: !isTop },
+        { [styles.transition]: transitionMount },
         { [styles.show]: !virtualSplash }
       )}
     >

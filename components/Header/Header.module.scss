@@ -14,9 +14,11 @@
 
   opacity: 0;
 
-  transition: {
-    property: transform, opacity;
-    duration: 0.75s;
+  &.transition {
+    transition: {
+      property: transform, opacity;
+      duration: 0.75s;
+    }
   }
 
   &.show {
