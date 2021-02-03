@@ -8,7 +8,7 @@ interface TitleProps extends React.HTMLAttributes<HTMLElement> {
     JSX.IntrinsicElements,
     "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span"
   >;
-  size?: "normal" | "large";
+  size?: "normal" | "large" | "small";
 }
 
 const TitleEl: React.FC<TitleProps> = ({

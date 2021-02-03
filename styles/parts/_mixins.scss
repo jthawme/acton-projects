@@ -45,7 +45,7 @@
   column-gap: var(--size-unit-10);
 
   @include tablet {
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(12, 1fr);
   }
 }
 
@@ -65,7 +65,7 @@
   @include column(1, 4);
 
   @include tablet {
-    @include column(1, 4);
+    @include column(1, 5);
   }
 }
 
@@ -73,11 +73,11 @@
   @include column(1, 4);
 
   @include tablet {
-    @include column(1, 7);
+    @include column(1, 10);
   }
 
   @include desktop {
-    @include column(1, 6);
+    @include column(1, 10);
   }
 }
 
@@ -85,7 +85,7 @@
   @include column(1, 4);
 
   @include tablet {
-    @include column(5, 4);
+    @include column(7, 6);
   }
 }
 

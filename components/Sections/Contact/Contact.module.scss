@@ -13,7 +13,7 @@
   &Text {
     @include leftColumn;
 
-    --text-padding: 50vh 0 var(--global-double-margin);
+    --text-padding: 35vh 0 var(--global-double-margin);
   }
 }
 
@@ -43,5 +43,16 @@
         opacity: 0.35;
       }
     }
+  }
+}
+
+.introWrapper > * {
+  transition: {
+    duration: 0.75s;
+    property: opacity;
+  }
+
+  .inactive & {
+    opacity: 0;
   }
 }

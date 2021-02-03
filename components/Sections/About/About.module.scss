@@ -1,7 +1,7 @@
 .intro {
   @include topGrid;
 
-  color: var(--color-light-red-orange);
+  color: white;
 
   align-items: flex-end;
   height: 100%;
@@ -64,7 +64,7 @@
     @include column(1, 4);
 
     @include tablet {
-      @include column(5, 2);
+      @include column(7, 4);
     }
   }
 }
@@ -97,5 +97,19 @@
     p:first-child {
       margin-bottom: var(--global-margin);
     }
+  }
+}
+
+.introWrapper > *,
+.imageWrapper > *,
+.aboutTextWrapper > *,
+.teamWrapper > * {
+  transition: {
+    duration: 0.75s;
+    property: opacity;
+  }
+
+  .inactive & {
+    opacity: 0;
   }
 }

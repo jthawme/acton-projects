@@ -9,7 +9,7 @@
   &Wrapper {
     background-color: var(--color-dark-red-orange);
 
-    height: 70vh;
+    height: 60vh;
   }
 
   &Text {
@@ -54,5 +54,17 @@
 
   &Title {
     --title-margin: 0 0 var(--global-margin);
+  }
+}
+
+.introWrapper > *,
+.splitWrapper > * {
+  transition: {
+    duration: 0.75s;
+    property: opacity;
+  }
+
+  .inactive & {
+    opacity: 0;
   }
 }

@@ -26,14 +26,22 @@ const MENU_ITEMS = [
 ];
 
 const TOP_THRESHOLD = 100;
+const ABSOLUTE_TOP_THRESHOLD = 50;
 
 const Header = () => {
-  const { isTop, setIsTop, activeSection, virtualSplash } = useSiteContext();
+  const {
+    isTop,
+    setIsTop,
+    activeSection,
+    virtualSplash,
+    setIsAbsoluteTop,
+  } = useSiteContext();
   const transitionMount = useTransitionMount();
 
   useEffect(() => {
     const cb = tickUpdate(() => {
       setIsTop(window.scrollY < TOP_THRESHOLD);
+      setIsAbsoluteTop(window.scrollY < ABSOLUTE_TOP_THRESHOLD);
     });
 
     window.addEventListener("scroll", cb, {

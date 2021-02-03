@@ -77,6 +77,8 @@
   grid-template-columns: repeat(3, 1fr);
   column-gap: var(--size-unit-2);
 
+  padding-left: var(--size-unit-10);
+
   justify-content: center;
 }
 
@@ -91,6 +93,7 @@
     padding: 0 5px 5px;
 
     text-decoration: none;
+    font-size: 13px;
 
     color: inherit;
 

@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef } from "react";
+import classNames from "classnames";
 import { ImageEl } from "../../Common/Image";
 import { TextEl } from "../../Common/Text";
 import { TitleEl } from "../../Common/Title";
@@ -8,7 +9,7 @@ import { useSiteContext } from "../../SiteContext";
 import styles from "./Contact.module.scss";
 
 const ContactSection = () => {
-  const { observeElement } = useSiteContext();
+  const { observeElement, activeSection } = useSiteContext();
   const unobserve = useRef(() => {});
 
   const onRef = useCallback((ref) => {
@@ -22,7 +23,13 @@ const ContactSection = () => {
   }, []);
 
   return (
-    <section ref={onRef} id="contact" className={styles.section}>
+    <section
+      ref={onRef}
+      id="contact"
+      className={classNames(styles.section, {
+        [styles.inactive]: activeSection !== "contact",
+      })}
+    >
       <div className={styles.introWrapper}>
         <Container className={styles.intro}>
           <TextEl className={styles.introText}>
@@ -31,10 +38,10 @@ const ContactSection = () => {
             we would be delighted to hear from you.
           </TextEl>
           <div className={styles.row}>
-            <TitleEl size="normal" className={styles.rowTitle}>
+            <TitleEl size="small" className={styles.rowTitle}>
               General Enquiries
             </TitleEl>
-            <TextEl size="medium" className={styles.rowContent}>
+            <TextEl size="normal" className={styles.rowContent}>
               <a href="mailto:garry@actonprojects.co.uk">
                 garry@actonprojects.co.uk
               </a>
@@ -44,10 +51,10 @@ const ContactSection = () => {
           </div>
 
           <div className={styles.row}>
-            <TitleEl size="normal" className={styles.rowTitle}>
+            <TitleEl size="small" className={styles.rowTitle}>
               ADDRESS
             </TitleEl>
-            <TextEl size="medium" className={styles.rowContent}>
+            <TextEl size="normal" className={styles.rowContent}>
               The Barn Conversion
               <br />
               18 East End
@@ -60,10 +67,10 @@ const ContactSection = () => {
           </div>
 
           <div className={styles.row}>
-            <TitleEl size="normal" className={styles.rowTitle}>
+            <TitleEl size="small" className={styles.rowTitle}>
               Company Registration
             </TitleEl>
-            <TextEl size="medium" className={styles.rowContent}>
+            <TextEl size="normal" className={styles.rowContent}>
               VAT No. 210 1909 57
               <br />
               REG. 8091780

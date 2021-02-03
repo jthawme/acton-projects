@@ -10,7 +10,13 @@ import { useSiteContext } from "../../SiteContext";
 import { useTransitionMount } from "../../../utils/hooks";
 
 const Landing = () => {
-  const { isTop, observeElement, virtualSplash } = useSiteContext();
+  const {
+    isTop,
+    observeElement,
+    virtualSplash,
+    activeSection,
+    isAbsoluteTop,
+  } = useSiteContext();
   const transitionMount = useTransitionMount();
   const unobserve = useRef(() => {});
   const [show, setShow] = useState(false);
@@ -35,14 +41,15 @@ const Landing = () => {
       className={classNames(
         styles.section,
         { [styles.show]: !virtualSplash },
-        { [styles.transition]: transitionMount }
+        { [styles.transition]: transitionMount },
+        { [styles.inactive]: activeSection !== "landing" }
       )}
     >
       <Container className={styles.container}>
         <div className={styles.logoWrapper}>
           <Logo
             className={classNames(styles.logo, {
-              [styles.hide]: !isTop || virtualSplash,
+              [styles.hide]: !isAbsoluteTop || virtualSplash,
             })}
           />
         </div>

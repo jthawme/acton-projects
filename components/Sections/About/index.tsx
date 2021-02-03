@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef } from "react";
+import classNames from "classnames";
 import { Container } from "../../Container";
 import { TextEl } from "../../Common/Text";
 import { ImageEl } from "../../Common/Image";
@@ -8,7 +9,7 @@ import styles from "./About.module.scss";
 import { useSiteContext } from "../../SiteContext";
 
 const AboutSection = () => {
-  const { observeElement } = useSiteContext();
+  const { observeElement, activeSection } = useSiteContext();
   const unobserve = useRef(() => {});
 
   const onRef = useCallback((ref) => {
@@ -22,7 +23,13 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section id="about" ref={onRef} className={styles.section}>
+    <section
+      id="about"
+      ref={onRef}
+      className={classNames(styles.section, {
+        [styles.inactive]: activeSection !== "about",
+      })}
+    >
       <div className={styles.introWrapper}>
         <Container className={styles.intro}>
           <TextEl className={styles.introText}>
@@ -35,9 +42,9 @@ const AboutSection = () => {
         <Container className={styles.image}>
           <ImageEl
             className={styles.imageEl}
-            src="/placeholder.jpg"
+            src="/building.jpg"
             alt=""
-            label="Image label"
+            // label="Image label"
             ratio={2592 / 3872}
             color="var(--color-earth-4)"
           />
@@ -70,9 +77,9 @@ const AboutSection = () => {
           </TitleEl>
           <ImageEl
             className={styles.teamImage}
-            src="/team-gary@2x.jpg"
+            src="/portrait.jpg"
             alt=""
-            label="Image label"
+            // label="Image label"
             ratio={0.6672597865}
             color="var(--color-light-red-orange)"
           />

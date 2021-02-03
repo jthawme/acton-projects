@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef } from "react";
+import classNames from "classnames";
 import { ImageEl } from "../../Common/Image";
 import { TextEl } from "../../Common/Text";
 import { TitleEl } from "../../Common/Title";
@@ -8,7 +9,7 @@ import { useSiteContext } from "../../SiteContext";
 import styles from "./Service.module.scss";
 
 const ServiceSection = () => {
-  const { observeElement } = useSiteContext();
+  const { observeElement, activeSection } = useSiteContext();
   const unobserve = useRef(() => {});
 
   const onRef = useCallback((ref) => {
@@ -21,7 +22,13 @@ const ServiceSection = () => {
     return unobserve.current;
   }, []);
   return (
-    <section ref={onRef} id="service" className={styles.section}>
+    <section
+      ref={onRef}
+      id="service"
+      className={classNames(styles.section, {
+        [styles.inactive]: activeSection !== "service",
+      })}
+    >
       <div className={styles.introWrapper}>
         <Container className={styles.intro}>
           <TextEl className={styles.introText}>

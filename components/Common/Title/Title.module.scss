@@ -18,6 +18,12 @@
   }
 }
 
+.small {
+  --title-font-size: var(--font-size-normal);
+
+  --title-margin: 0 0 var(--font-size-normal);
+}
+
 .normal {
   --title-font-size: var(--font-size-medium);
 

@@ -10,6 +10,8 @@ import React, {
 interface SiteContext {
   isTop: boolean;
   setIsTop: (isTop: boolean) => void;
+  isAbsoluteTop: boolean;
+  setIsAbsoluteTop: (isTop: boolean) => void;
   observeElement: (el: HTMLElement) => () => void;
   activeSection?: string;
   virtualSplash?: boolean;
@@ -18,12 +20,15 @@ interface SiteContext {
 const SiteContext = createContext<SiteContext>({
   isTop: true,
   setIsTop: () => false,
+  isAbsoluteTop: true,
+  setIsAbsoluteTop: () => false,
   observeElement: () => () => false,
   virtualSplash: true,
 });
 
 const SiteContainer: React.FC = ({ children }) => {
   const [isTop, setIsTop] = useState(true);
+  const [isAbsoluteTop, setIsAbsoluteTop] = useState(true);
   const sectionObserver = useRef<IntersectionObserver>();
   const deferredObserves = useRef<HTMLElement[]>([]);
   const [activeSections, setActiveSections] = useState({
@@ -47,7 +52,9 @@ const SiteContainer: React.FC = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    document.documentElement.classList.toggle("lock", virtualSplash);
+    if (window.scrollY < window.innerHeight * 0.25) {
+      document.documentElement.classList.toggle("lock", virtualSplash);
+    }
   }, [virtualSplash]);
 
   useEffect(() => {
@@ -61,7 +68,8 @@ const SiteContainer: React.FC = ({ children }) => {
         });
       },
       {
-        threshold: [0.2, 0.8],
+        threshold: [0.1],
+        rootMargin: "50px",
       }
     );
 
@@ -84,7 +92,15 @@ const SiteContainer: React.FC = ({ children }) => {
 
   return (
     <SiteContext.Provider
-      value={{ isTop, setIsTop, observeElement, activeSection, virtualSplash }}
+      value={{
+        isTop,
+        setIsTop,
+        observeElement,
+        activeSection,
+        virtualSplash,
+        isAbsoluteTop,
+        setIsAbsoluteTop,
+      }}
     >
       {children}
     </SiteContext.Provider>
