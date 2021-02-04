@@ -3,4 +3,11 @@
 
   padding: var(--container-margin, 0 var(--global-margin));
   margin: 0 auto;
+
+  &.controlled {
+    @include desktop {
+      --container-margin: 0 calc(var(--global-margin) * 1.5) 0
+        var(--global-margin);
+    }
+  }
 }

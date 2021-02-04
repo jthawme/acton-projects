@@ -55,9 +55,9 @@ const ContactSection = () => {
               ADDRESS
             </TitleEl>
             <TextEl size="normal" className={styles.rowContent}>
-              The Barn Conversion
+              The Barnhouse
               <br />
-              18 East End
+              18A East End
               <br />
               Walkington <br />
               Beverley

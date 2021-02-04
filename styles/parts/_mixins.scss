@@ -42,10 +42,15 @@
   display: grid;
 
   grid-template-columns: repeat(4, 1fr);
-  column-gap: var(--size-unit-10);
+  column-gap: var(--size-unit-4);
 
   @include tablet {
     grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--size-unit-10);
+  }
+
+  @include desktop {
+    column-gap: var(--size-unit-10);
   }
 }
 
@@ -65,6 +70,10 @@
   @include column(1, 4);
 
   @include tablet {
+    @include column(1, 6);
+  }
+
+  @include desktop {
     @include column(1, 5);
   }
 }
@@ -73,7 +82,7 @@
   @include column(1, 4);
 
   @include tablet {
-    @include column(1, 10);
+    @include column(1, 11);
   }
 
   @include desktop {

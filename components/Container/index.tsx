@@ -8,15 +8,25 @@ interface ContainerInterface extends React.HTMLAttributes<HTMLElement> {
     JSX.IntrinsicElements,
     "section" | "div" | "span" | "main" | "header" | "footer"
   >;
+  controlled?: boolean;
 }
 
 const Container: React.FC<ContainerInterface> = ({
   tagName: El = "div",
   className,
   children,
+  controlled = true,
 }) => {
   return (
-    <El className={classNames(styles.container, className)}>{children}</El>
+    <El
+      className={classNames(
+        styles.container,
+        { [styles.controlled]: controlled },
+        className
+      )}
+    >
+      {children}
+    </El>
   );
 };
 

@@ -24,12 +24,12 @@ const Footer = () => {
   return (
     <footer ref={footerRef} className={styles.footer}>
       <div className={styles.brand}>
-        <Container>
+        <Container controlled={false}>
           <Logo className={styles.brandLogo} side />
         </Container>
       </div>
       <div className={styles.linksWrapper}>
-        <Container className={styles.links}>
+        <Container className={styles.links} controlled={false}>
           <TextEl size="normal" className={styles.linksContent}>
             <InternalLink href="#about">ABOUT</InternalLink>
             <br />

@@ -61,9 +61,13 @@
   }
 
   &Supporting {
-    @include column(1, 4);
+    @include column(1, 3);
 
     @include tablet {
+      @include column(7, 5);
+    }
+
+    @include desktop {
       @include column(7, 4);
     }
   }

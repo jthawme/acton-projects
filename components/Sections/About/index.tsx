@@ -33,8 +33,10 @@ const AboutSection = () => {
       <div className={styles.introWrapper}>
         <Container className={styles.intro}>
           <TextEl className={styles.introText}>
-            We are a small business with a vast amount of experience; that means
-            that you get a personal service from a more knowledgeable team.
+            At Acton Projects we know construction. We are a new construction
+            company offering many years of experience. We bring a personal
+            touch, in a professional manner, to your commercial, residential or
+            public sector project.
           </TextEl>
         </Container>
       </div>
@@ -80,7 +82,7 @@ const AboutSection = () => {
             src="/portrait.jpg"
             alt=""
             // label="Image label"
-            ratio={0.6672597865}
+            ratio={847 / 1200}
             color="var(--color-light-red-orange)"
           />
           <div className={styles.teamSupporting}>
