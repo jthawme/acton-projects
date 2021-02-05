@@ -88,17 +88,20 @@ const AboutSection = () => {
           <div className={styles.teamSupporting}>
             <TitleEl>GARRY ACTON — DIRECTOR</TitleEl>
             <TextEl size="medium">
-              I have worked in property sales for over 20 years, with my first
-              career steps made in the world of new developments. But it was
-              while working for two of the world’s leading real estate brands,
-              Knight Frank and Savills, that I gained extensive knowledge of the
-              high-end property market in Mayfair, Marylebone, St James’s and
-              Belgravia. I became a director of Savills’ Mayfair office in 2010.
+              I have work in building and construction for almost 20 years, with
+              10 years spent at Willmott Dixon, one of the largest privately
+              owned construction companies in the UK.
             </TextEl>
             <TextEl size="medium">
-              I have established myself as a trusted advisor to clients,
-              developers and buyers, who value my perseverance, honesty and calm
-              approach.
+              Working in the education sector, delivering complex school
+              projects on time and on budget, allowed me to garner the
+              experience that we now translate into the private sector as well —
+              exceptional in pre-planning, meticulous through construction and
+              focussed on quality and value.
+            </TextEl>
+            <TextEl size="medium">
+              Our principle is honesty is the best policy (with no hidden
+              extras), working with people to build long lasting relationships.
             </TextEl>
           </div>
         </Container>

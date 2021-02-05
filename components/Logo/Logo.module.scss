@@ -4,7 +4,7 @@
   line-height: 0;
 
   &-mark {
-    width: 60px;
+    width: var(--logo-size, 60px);
   }
 
   &.height,

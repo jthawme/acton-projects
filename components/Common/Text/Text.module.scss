@@ -27,6 +27,11 @@
     color: var(--color-red);
     font-style: normal;
   }
+
+  i {
+    font-style: normal;
+    filter: brightness(1.4);
+  }
 }
 
 .large {

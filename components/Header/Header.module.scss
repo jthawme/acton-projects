@@ -62,15 +62,18 @@
   z-index: 2;
 
   display: grid;
-
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 
   align-items: center;
   height: 100%;
+
+  @include tablet {
+    grid-template-columns: repeat(12, 1fr);
+  }
 }
 
 .links-nav {
-  grid-column: 7 / span 6;
+  grid-column: 2 / span 5;
 
   display: grid;
 
@@ -80,6 +83,10 @@
   padding-left: var(--size-unit-10);
 
   justify-content: center;
+
+  @include tablet {
+    grid-column: 7 / span 6;
+  }
 }
 
 .item {
