@@ -32,11 +32,11 @@ const ServiceSection = () => {
       <div className={styles.introWrapper}>
         <Container className={styles.intro}>
           <TextEl className={styles.introText}>
-            Due to the makeup of our business we are able to tailor <i>our</i>{" "}
-            service to suit <i>your</i> needs. Whether you are a private
-            individual, serial investor or a larger corporate organisation, we
-            can develop a service that is beneficial to all and covers all
-            aspects of construction.
+            Due to the makeup of our business we are able to tailor our service
+            to suit your needs. Whether you are a private individual, serial
+            investor or a larger corporate organisation, we can develop a
+            service that is beneficial to all and covers all aspects of
+            construction.
           </TextEl>
         </Container>
       </div>

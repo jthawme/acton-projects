@@ -33,10 +33,10 @@ const AboutSection = () => {
       <div className={styles.introWrapper}>
         <Container className={styles.intro}>
           <TextEl className={styles.introText}>
-            At Acton Projects we know construction. We are a new construction
-            company offering many years of experience. We bring a personal
-            touch, in a professional manner, to your commercial, residential or
-            public sector project.
+            At Acton Projects, we know construction. We&nbsp;are a new
+            construction company offering many years of experience. We bring a
+            personal touch, in a professional manner, to your commercial,
+            residential or public sector project.
           </TextEl>
         </Container>
       </div>
@@ -88,20 +88,21 @@ const AboutSection = () => {
           <div className={styles.teamSupporting}>
             <TitleEl>GARRY ACTON — DIRECTOR</TitleEl>
             <TextEl size="medium">
-              I have work in building and construction for almost 20 years, with
-              10 years spent at Willmott Dixon, one of the largest privately
-              owned construction companies in the UK.
+              I have worked in building and construction for almost 20 years,
+              with&nbsp;10 years spent at Willmott Dixon, one of the largest
+              privately owned construction companies in the UK.
             </TextEl>
             <TextEl size="medium">
-              Working in the education sector, delivering complex school
-              projects on time and on budget, allowed me to garner the
-              experience that we now translate into the private sector as well —
-              exceptional in pre-planning, meticulous through construction and
-              focussed on quality and value.
+              Working in the education sector, delivering complex live projects
+              with strict deadlines and imperative budgets, has allowed me to
+              garner the experience that we now translate into the private
+              sector as well — exceptional in pre-planning, meticulous through
+              construction and focussed on quality and value.
             </TextEl>
             <TextEl size="medium">
               Our principle is honesty is the best policy (with no hidden
-              extras), working with people to build long lasting relationships.
+              extras), working <i>with</i> people to build long lasting
+              relationships.
             </TextEl>
           </div>
         </Container>

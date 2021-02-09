@@ -33,7 +33,7 @@ const ContactSection = () => {
       <div className={styles.introWrapper}>
         <Container className={styles.intro}>
           <TextEl className={styles.introText}>
-            If would like to discuss your project with us, or find our more
+            If you would like to discuss your project with us, or find out more
             about how we might be able to help you with building or maintenance,
             we would be delighted to hear from you.
           </TextEl>

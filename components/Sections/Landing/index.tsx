@@ -57,8 +57,8 @@ const Landing = () => {
         {show && (
           <TextEl className={styles.text}>
             Acton Projects is a new construction company with many years of
-            experience. We bring a personal touch to residential, commercial and
-            public sector building.{" "}
+            experience. We&nbsp;bring a personal touch to residential,
+            commercial and public sector building.{" "}
           </TextEl>
         )}
       </Container>
