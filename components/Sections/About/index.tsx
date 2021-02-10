@@ -33,10 +33,8 @@ const AboutSection = () => {
       <div className={styles.introWrapper}>
         <Container className={styles.intro}>
           <TextEl className={styles.introText}>
-            At Acton Projects, we know construction. We&nbsp;are a new
-            construction company offering many years of experience. We bring a
-            personal touch, in a professional manner, to your commercial,
-            residential or public sector project.
+            We are a small business with a vast amount of experience; that means
+            that you get a personal service from a more knowledgeable team.
           </TextEl>
         </Container>
       </div>
@@ -88,16 +86,16 @@ const AboutSection = () => {
           <div className={styles.teamSupporting}>
             <TitleEl>GARRY ACTON — DIRECTOR</TitleEl>
             <TextEl size="medium">
-              I have worked in building and construction for almost 20 years,
-              with&nbsp;10 years spent at Willmott Dixon, one of the largest
-              privately owned construction companies in the UK.
+              I have worked in building and construction for almost 20
+              years,&nbsp;with&nbsp;10 years spent at Willmott Dixon, one of the
+              largest privately owned construction companies in the UK.
             </TextEl>
             <TextEl size="medium">
               Working in the education sector, delivering complex live projects
               with strict deadlines and imperative budgets, has allowed me to
-              garner the experience that we now translate into the private
+              garner the experience that we now translate into&nbsp;the private
               sector as well — exceptional in pre-planning, meticulous through
-              construction and focussed on quality and value.
+              construction and focussed on quality and&nbsp;value.
             </TextEl>
             <TextEl size="medium">
               Our principle is honesty is the best policy (with no hidden
